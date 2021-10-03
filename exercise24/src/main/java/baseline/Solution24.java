@@ -16,6 +16,51 @@
 
 package baseline;
 
-public class Solution24 {
+import java.util.Arrays;
+import java.util.Scanner;
 
+public class Solution24 {
+    class function{
+        static boolean isAnagram(String first, String second){
+            String functionStrng1 = first;
+            String functionStrng2 = second;
+
+            boolean status = true;
+
+            if(functionStrng1.length() != functionStrng2.length()){
+                status = false;
+            } else {
+                char[] Arr1 = functionStrng1.toLowerCase().toCharArray();
+                char[] Arr2 = functionStrng2.toLowerCase().toCharArray();
+
+                Arrays.sort(Arr1);
+                Arrays.sort(Arr2);
+
+                status = Arrays.equals(Arr1, Arr2);
+            }
+
+            if(status) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public static void main(String[] args){
+        Scanner scnr = new Scanner(System.in);
+
+        System.out.println("Enter two strings and I'll tell you if they are anagrams:");
+        System.out.println("Enter the first string:");
+        String first = scnr.nextLine();
+
+        System.out.println("Enter the second string:");
+        String second = scnr.nextLine();
+
+        if(function.isAnagram(first, second)){
+            System.out.println(first + " and " + second + " are anagrams");
+        } else {
+            System.out.println(first + " and " + second + " are not anagrams");
+        }
+    }
 }
