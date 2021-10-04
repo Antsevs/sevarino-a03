@@ -12,5 +12,12 @@
 package baseline;
 
 public class Solution30 {
-    
+    public static void main(String[] args) {
+        for(int i=1; i<=12;i++){
+            for(int n=1; n<=12; n++){
+                System.out.format("%5d", i*n);
+            }
+            System.out.println();
+        }
+    }
 }
