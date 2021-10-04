@@ -11,5 +11,26 @@
  */
 package baseline;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class Solution33 {
+    public static void main(String[] args) {
+        //make the array of choices
+        String[] ballChoice = {"Yes", "No", "Maybe", "Ask again later"};
+
+        //establish random type
+        Random rand = new Random();
+
+        Scanner scnr = new Scanner(System.in);
+
+        //putting int into method that can be understood by rand type and assigning that value to array
+        int randAns = rand.nextInt(ballChoice.length);
+        String ballAns = ballChoice[randAns];
+
+        //print resulting choice after user prompt
+        System.out.println("What's your question?");
+        String userQ = scnr.nextLine();
+        System.out.println("\n" + ballAns);
+    }
 }
